@@ -1,0 +1,11 @@
+data:
+  outsourced-invoices:
+  - id: outsourced-invoice-test
+    receiver-id: CUST1
+    supplier-id: SUPP1
+    receive-address:
+      postal-code: '13496'
+      street: '경기도 성남시 분당구 장미로 42'
+      detail: '야탑리더스 410호'
+    due-date: "2020-12-20T09:44:03+09:00"
+    remark: 비고 내용
