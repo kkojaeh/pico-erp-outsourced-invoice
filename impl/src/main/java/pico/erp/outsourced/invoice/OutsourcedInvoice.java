@@ -14,6 +14,7 @@ import lombok.experimental.FieldDefaults;
 import pico.erp.company.CompanyId;
 import pico.erp.invoice.InvoiceId;
 import pico.erp.outsourced.invoice.OutsourcedInvoiceEvents.DeterminedEvent;
+import pico.erp.project.ProjectId;
 import pico.erp.shared.data.Address;
 
 /**
@@ -41,6 +42,8 @@ public class OutsourcedInvoice implements Serializable {
   Address receiveAddress;
 
   OffsetDateTime dueDate;
+
+  ProjectId projectId;
 
   String remark;
 

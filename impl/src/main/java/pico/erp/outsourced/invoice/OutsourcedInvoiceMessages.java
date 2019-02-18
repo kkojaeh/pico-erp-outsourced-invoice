@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.Value;
 import pico.erp.company.CompanyId;
 import pico.erp.invoice.InvoiceId;
+import pico.erp.project.ProjectId;
 import pico.erp.shared.TypeDefinitions;
 import pico.erp.shared.data.Address;
 import pico.erp.shared.event.Event;
@@ -24,6 +25,10 @@ public interface OutsourcedInvoiceMessages {
       @Valid
       @NotNull
       OutsourcedInvoiceId id;
+
+      @Valid
+      @NotNull
+      ProjectId projectId;
 
       @Valid
       @NotNull
@@ -59,6 +64,10 @@ public interface OutsourcedInvoiceMessages {
 
     @Data
     class Request {
+
+      @Valid
+      @NotNull
+      ProjectId projectId;
 
       @Future
       @NotNull

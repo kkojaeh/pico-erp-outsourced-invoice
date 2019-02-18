@@ -8,6 +8,7 @@ create table osdi_outsourced_invoice (
 	last_modified_by_id varchar(50),
 	last_modified_by_name varchar(50),
 	last_modified_date datetime,
+	project_id binary(16),
 	receive_address_detail varchar(50),
 	receive_address_postal_code varchar(10),
 	receive_address_street varchar(50),

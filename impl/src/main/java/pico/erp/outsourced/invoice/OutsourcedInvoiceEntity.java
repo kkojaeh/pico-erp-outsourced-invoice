@@ -29,6 +29,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import pico.erp.company.CompanyId;
 import pico.erp.invoice.InvoiceId;
+import pico.erp.project.ProjectId;
 import pico.erp.shared.TypeDefinitions;
 import pico.erp.shared.data.Address;
 import pico.erp.shared.data.Auditor;
@@ -86,6 +87,11 @@ public class OutsourcedInvoiceEntity implements Serializable {
   @Column(length = TypeDefinitions.ENUM_LENGTH)
   @Enumerated(EnumType.STRING)
   OutsourcedInvoiceStatusKind status;
+
+  @AttributeOverrides({
+    @AttributeOverride(name = "value", column = @Column(name = "PROJECT_ID", length = TypeDefinitions.UUID_BINARY_LENGTH))
+  })
+  ProjectId projectId;
 
   @Embedded
   @AttributeOverrides({
