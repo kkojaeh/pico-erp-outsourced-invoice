@@ -75,6 +75,7 @@ public abstract class OutsourcedInvoiceMapper {
   public OutsourcedInvoice jpa(OutsourcedInvoiceEntity entity) {
     return OutsourcedInvoice.builder()
       .id(entity.getId())
+      .projectId(entity.getProjectId())
       .invoiceId(entity.getInvoiceId())
       .receiverId(entity.getReceiverId())
       .supplierId(entity.getSupplierId())

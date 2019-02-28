@@ -56,6 +56,7 @@ public class OutsourcedInvoice implements Serializable {
   public OutsourcedInvoiceMessages.Create.Response apply(
     OutsourcedInvoiceMessages.Create.Request request) {
     this.id = request.getId();
+    this.projectId = request.getProjectId();
     this.dueDate = request.getDueDate();
     this.receiverId = request.getReceiverId();
     this.supplierId = request.getSupplierId();
@@ -72,6 +73,7 @@ public class OutsourcedInvoice implements Serializable {
     if (!isUpdatable()) {
       throw new OutsourcedInvoiceExceptions.CannotUpdateException();
     }
+    this.projectId = request.getProjectId();
     this.dueDate = request.getDueDate();
     this.receiverId = request.getReceiverId();
     this.supplierId = request.getSupplierId();

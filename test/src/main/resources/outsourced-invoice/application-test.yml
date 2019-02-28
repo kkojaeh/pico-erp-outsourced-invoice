@@ -1,6 +1,7 @@
 data:
   outsourced-invoices:
   - id: outsourced-invoice-test
+    project-id: sample-project1
     receiver-id: CUST1
     supplier-id: SUPP1
     receive-address:

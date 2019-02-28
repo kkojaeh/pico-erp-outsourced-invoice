@@ -43,6 +43,7 @@ public class OutsourcedInvoicedQueryJpa implements OutsourcedInvoiceQuery {
       invoice.invoiceId,
       invoice.receiverId,
       invoice.supplierId,
+      invoice.projectId,
       invoice.receiveAddress,
       invoice.dueDate,
       invoice.status,

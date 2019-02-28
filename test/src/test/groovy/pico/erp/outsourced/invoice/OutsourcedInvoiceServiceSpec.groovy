@@ -12,6 +12,7 @@ import pico.erp.company.CompanyId
 import pico.erp.invoice.InvoiceRequests
 import pico.erp.invoice.InvoiceService
 import pico.erp.outsourced.invoice.item.OutsourcedInvoiceItemService
+import pico.erp.project.ProjectId
 import pico.erp.shared.IntegrationConfiguration
 import pico.erp.shared.data.Address
 import pico.erp.user.UserId
@@ -57,6 +58,8 @@ class OutsourcedInvoiceServiceSpec extends Specification {
 
   def confirmerId = UserId.from("kjh")
 
+  def projectId = ProjectId.from("sample-project1")
+
   def receiveAddress = new Address(
     postalCode: '13496',
     street: '경기도 성남시 분당구 장미로 42',
@@ -70,17 +73,8 @@ class OutsourcedInvoiceServiceSpec extends Specification {
         id: id,
         receiverId: receiverId,
         supplierId: supplierId,
+        projectId: projectId,
         receiveAddress: receiveAddress,
-        dueDate: dueDate,
-        remark: remark
-      )
-    )
-  }
-
-  def createInvoice2() {
-    outsourcedInvoiceService.create(
-      new OutsourcedInvoiceRequests.CreateRequest(
-        id: id2,
         dueDate: dueDate,
         remark: remark
       )
@@ -120,6 +114,7 @@ class OutsourcedInvoiceServiceSpec extends Specification {
         receiverId: receiverId,
         supplierId: supplierId,
         receiveAddress: receiveAddress,
+        projectId: projectId,
         dueDate: dueDate2,
         remark: remark2
       )

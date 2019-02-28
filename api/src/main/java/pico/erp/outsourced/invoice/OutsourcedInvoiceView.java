@@ -18,6 +18,8 @@ public class OutsourcedInvoiceView {
 
   OutsourcedInvoiceId id;
 
+  ProjectId projectId;
+
   InvoiceId invoiceId;
 
   CompanyId receiverId;

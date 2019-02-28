@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import pico.erp.company.CompanyId;
 import pico.erp.invoice.InvoiceId;
+import pico.erp.project.ProjectId;
 import pico.erp.shared.TypeDefinitions;
 import pico.erp.shared.data.Address;
 
@@ -37,6 +38,10 @@ public interface OutsourcedInvoiceRequests {
     @Valid
     @NotNull
     CompanyId supplierId;
+
+    @Valid
+    @NotNull
+    ProjectId projectId;
 
     @Valid
     @NotNull
@@ -68,6 +73,10 @@ public interface OutsourcedInvoiceRequests {
     @Valid
     @NotNull
     CompanyId supplierId;
+
+    @Valid
+    @NotNull
+    ProjectId projectId;
 
     @Valid
     @NotNull
