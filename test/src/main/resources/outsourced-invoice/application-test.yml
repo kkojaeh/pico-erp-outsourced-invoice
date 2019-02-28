@@ -3,7 +3,7 @@ data:
   - id: outsourced-invoice-test
     project-id: sample-project1
     receiver-id: CUST1
-    supplier-id: SUPP1
+    sender-id: SUPP1
     receive-address:
       postal-code: '13496'
       street: '경기도 성남시 분당구 장미로 42'

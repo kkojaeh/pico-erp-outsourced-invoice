@@ -54,7 +54,7 @@ class OutsourcedInvoiceServiceSpec extends Specification {
 
   def receiverId = CompanyId.from("CUST1")
 
-  def supplierId = CompanyId.from("SUPP1")
+  def senderId = CompanyId.from("SUPP1")
 
   def confirmerId = UserId.from("kjh")
 
@@ -72,7 +72,7 @@ class OutsourcedInvoiceServiceSpec extends Specification {
       new OutsourcedInvoiceRequests.CreateRequest(
         id: id,
         receiverId: receiverId,
-        supplierId: supplierId,
+        senderId: senderId,
         projectId: projectId,
         receiveAddress: receiveAddress,
         dueDate: dueDate,
@@ -112,7 +112,7 @@ class OutsourcedInvoiceServiceSpec extends Specification {
       new OutsourcedInvoiceRequests.UpdateRequest(
         id: id,
         receiverId: receiverId,
-        supplierId: supplierId,
+        senderId: senderId,
         receiveAddress: receiveAddress,
         projectId: projectId,
         dueDate: dueDate2,
@@ -158,7 +158,7 @@ class OutsourcedInvoiceServiceSpec extends Specification {
     invoice.remark == remark
     invoice.dueDate == dueDate
     invoice.receiverId == receiverId
-    invoice.supplierId == supplierId
+    invoice.senderId == senderId
     invoice.receiveAddress == receiveAddress
 
   }

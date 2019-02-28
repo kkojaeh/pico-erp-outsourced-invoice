@@ -16,7 +16,7 @@ public class OutsourcedInvoiceData {
 
   CompanyId receiverId;
 
-  CompanyId supplierId;
+  CompanyId senderId;
 
   Address receiveAddress;
 

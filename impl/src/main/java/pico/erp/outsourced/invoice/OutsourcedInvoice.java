@@ -37,7 +37,7 @@ public class OutsourcedInvoice implements Serializable {
 
   CompanyId receiverId;
 
-  CompanyId supplierId;
+  CompanyId senderId;
 
   Address receiveAddress;
 
@@ -59,7 +59,7 @@ public class OutsourcedInvoice implements Serializable {
     this.projectId = request.getProjectId();
     this.dueDate = request.getDueDate();
     this.receiverId = request.getReceiverId();
-    this.supplierId = request.getSupplierId();
+    this.senderId = request.getSenderId();
     this.receiveAddress = request.getReceiveAddress();
     this.remark = request.getRemark();
     this.status = OutsourcedInvoiceStatusKind.DRAFT;
@@ -76,7 +76,7 @@ public class OutsourcedInvoice implements Serializable {
     this.projectId = request.getProjectId();
     this.dueDate = request.getDueDate();
     this.receiverId = request.getReceiverId();
-    this.supplierId = request.getSupplierId();
+    this.senderId = request.getSenderId();
     this.receiveAddress = request.getReceiveAddress();
     this.remark = request.getRemark();
     return new OutsourcedInvoiceMessages.Update.Response(

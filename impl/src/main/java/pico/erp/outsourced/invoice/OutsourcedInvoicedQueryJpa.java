@@ -42,7 +42,7 @@ public class OutsourcedInvoicedQueryJpa implements OutsourcedInvoiceQuery {
       invoice.id,
       invoice.invoiceId,
       invoice.receiverId,
-      invoice.supplierId,
+      invoice.senderId,
       invoice.projectId,
       invoice.receiveAddress,
       invoice.dueDate,
@@ -65,8 +65,8 @@ public class OutsourcedInvoicedQueryJpa implements OutsourcedInvoiceQuery {
       builder.and(invoice.receiverId.eq(filter.getReceiverId()));
     }
 
-    if (filter.getSupplierId() != null) {
-      builder.and(invoice.supplierId.eq(filter.getSupplierId()));
+    if (filter.getSenderId() != null) {
+      builder.and(invoice.senderId.eq(filter.getSenderId()));
     }
 
 /*    if (filter.getChargerId() != null) {

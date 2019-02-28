@@ -24,7 +24,7 @@ public class OutsourcedInvoiceView {
 
   CompanyId receiverId;
 
-  CompanyId supplierId;
+  CompanyId senderId;
 
   Address receiveAddress;
 
@@ -44,7 +44,7 @@ public class OutsourcedInvoiceView {
 
     CompanyId receiverId;
 
-    CompanyId supplierId;
+    CompanyId senderId;
 
     ProjectId projectId;
 

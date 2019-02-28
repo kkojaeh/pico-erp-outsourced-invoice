@@ -78,7 +78,7 @@ public abstract class OutsourcedInvoiceMapper {
       .projectId(entity.getProjectId())
       .invoiceId(entity.getInvoiceId())
       .receiverId(entity.getReceiverId())
-      .supplierId(entity.getSupplierId())
+      .senderId(entity.getSenderId())
       .receiveAddress(entity.getReceiveAddress())
       .dueDate(entity.getDueDate())
       .remark(entity.getRemark())

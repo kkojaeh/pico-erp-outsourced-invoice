@@ -37,7 +37,7 @@ public interface OutsourcedInvoiceRequests {
 
     @Valid
     @NotNull
-    CompanyId supplierId;
+    CompanyId senderId;
 
     @Valid
     @NotNull
@@ -72,7 +72,7 @@ public interface OutsourcedInvoiceRequests {
 
     @Valid
     @NotNull
-    CompanyId supplierId;
+    CompanyId senderId;
 
     @Valid
     @NotNull

@@ -62,9 +62,9 @@ public class OutsourcedInvoiceEntity implements Serializable {
   CompanyId receiverId;
 
   @AttributeOverrides({
-    @AttributeOverride(name = "value", column = @Column(name = "SUPPLIER_ID", length = TypeDefinitions.ID_LENGTH))
+    @AttributeOverride(name = "value", column = @Column(name = "SENDER_ID", length = TypeDefinitions.ID_LENGTH))
   })
-  CompanyId supplierId;
+  CompanyId senderId;
 
   @Embedded
   @AttributeOverrides({
