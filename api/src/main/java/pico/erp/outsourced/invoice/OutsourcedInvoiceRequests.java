@@ -50,6 +50,18 @@ public interface OutsourcedInvoiceRequests {
     @Size(max = TypeDefinitions.REMARK_LENGTH)
     String remark;
 
+    public static CreateRequest from(OutsourcedInvoiceData data) {
+      return CreateRequest.builder()
+        .id(data.getId())
+        .dueDate(data.getDueDate())
+        .receiverId(data.getReceiverId())
+        .senderId(data.getSenderId())
+        .projectId(data.getProjectId())
+        .receiveAddress(data.getReceiveAddress())
+        .remark(data.getRemark())
+        .build();
+    }
+
   }
 
   @Data

@@ -50,6 +50,18 @@ public interface OutsourcedInvoiceItemRequests {
     @Size(max = TypeDefinitions.REMARK_LENGTH)
     String remark;
 
+    public static CreateRequest from(OutsourcedInvoiceItemData data) {
+      return CreateRequest.builder()
+        .id(data.getId())
+        .invoiceId(data.getInvoiceId())
+        .itemId(data.getItemId())
+        .itemSpecCode(data.getItemSpecCode())
+        .unit(data.getUnit())
+        .quantity(data.getQuantity())
+        .remark(data.getRemark())
+        .build();
+    }
+
   }
 
   @Data
