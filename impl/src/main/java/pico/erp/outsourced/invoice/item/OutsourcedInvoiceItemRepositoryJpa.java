@@ -39,12 +39,12 @@ public class OutsourcedInvoiceItemRepositoryJpa implements OutsourcedInvoiceItem
 
   @Override
   public void deleteBy(OutsourcedInvoiceItemId id) {
-    repository.delete(id);
+    repository.deleteById(id);
   }
 
   @Override
   public boolean exists(OutsourcedInvoiceItemId id) {
-    return repository.exists(id);
+    return repository.existsById(id);
   }
 
   @Override
@@ -55,13 +55,13 @@ public class OutsourcedInvoiceItemRepositoryJpa implements OutsourcedInvoiceItem
 
   @Override
   public Optional<OutsourcedInvoiceItem> findBy(OutsourcedInvoiceItemId id) {
-    return Optional.ofNullable(repository.findOne(id))
+    return repository.findById(id)
       .map(mapper::jpa);
   }
 
   @Override
   public void update(OutsourcedInvoiceItem planItem) {
-    val entity = repository.findOne(planItem.getId());
+    val entity = repository.findById(planItem.getId()).get();
     mapper.pass(mapper.jpa(planItem), entity);
     repository.save(entity);
   }

@@ -18,7 +18,7 @@ interface OutsourcedInvoiceEntityRepository extends
   boolean exists(@Param("invoiceId") InvoiceId invoiceId);
 
   @Query("SELECT i FROM OutsourcedInvoice i WHERE i.invoiceId = :invoiceId")
-  OutsourcedInvoiceEntity findBy(@Param("invoiceId") InvoiceId invoiceId);
+  Optional<OutsourcedInvoiceEntity> findBy(@Param("invoiceId") InvoiceId invoiceId);
 
 }
 
@@ -41,12 +41,12 @@ public class OutsourcedInvoiceRepositoryJpa implements OutsourcedInvoiceReposito
 
   @Override
   public void deleteBy(OutsourcedInvoiceId id) {
-    repository.delete(id);
+    repository.deleteById(id);
   }
 
   @Override
   public boolean exists(OutsourcedInvoiceId id) {
-    return repository.exists(id);
+    return repository.existsById(id);
   }
 
   @Override
@@ -56,19 +56,19 @@ public class OutsourcedInvoiceRepositoryJpa implements OutsourcedInvoiceReposito
 
   @Override
   public Optional<OutsourcedInvoice> findBy(OutsourcedInvoiceId id) {
-    return Optional.ofNullable(repository.findOne(id))
+    return repository.findById(id)
       .map(mapper::jpa);
   }
 
   @Override
   public Optional<OutsourcedInvoice> findBy(InvoiceId invoiceId) {
-    return Optional.ofNullable(repository.findBy(invoiceId))
+    return repository.findBy(invoiceId)
       .map(mapper::jpa);
   }
 
   @Override
   public void update(OutsourcedInvoice plan) {
-    val entity = repository.findOne(plan.getId());
+    val entity = repository.findById(plan.getId()).get();
     mapper.pass(mapper.jpa(plan), entity);
     repository.save(entity);
   }

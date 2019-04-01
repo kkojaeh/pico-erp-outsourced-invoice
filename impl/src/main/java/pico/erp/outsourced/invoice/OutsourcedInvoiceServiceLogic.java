@@ -1,5 +1,6 @@
 package pico.erp.outsourced.invoice;
 
+import kkojaeh.spring.boot.component.Give;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,12 +11,11 @@ import pico.erp.outsourced.invoice.OutsourcedInvoiceRequests.CancelRequest;
 import pico.erp.outsourced.invoice.OutsourcedInvoiceRequests.DetermineRequest;
 import pico.erp.outsourced.invoice.OutsourcedInvoiceRequests.InvoiceRequest;
 import pico.erp.outsourced.invoice.OutsourcedInvoiceRequests.ReceiveRequest;
-import pico.erp.shared.Public;
 import pico.erp.shared.event.EventPublisher;
 
 @SuppressWarnings("Duplicates")
 @Service
-@Public
+@Give
 @Transactional
 @Validated
 public class OutsourcedInvoiceServiceLogic implements OutsourcedInvoiceService {

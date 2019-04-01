@@ -2,7 +2,7 @@ package pico.erp.outsourced.invoice;
 
 
 import java.io.Serializable;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -79,7 +79,7 @@ public class OutsourcedInvoiceEntity implements Serializable {
   })
   InvoiceId invoiceId;
 
-  OffsetDateTime dueDate;
+  LocalDateTime dueDate;
 
   @Column(length = TypeDefinitions.REMARK_LENGTH)
   String remark;
@@ -103,7 +103,7 @@ public class OutsourcedInvoiceEntity implements Serializable {
 
   @CreatedDate
   @Column(updatable = false)
-  OffsetDateTime createdDate;
+  LocalDateTime createdDate;
 
   @Embedded
   @AttributeOverrides({
@@ -114,6 +114,6 @@ public class OutsourcedInvoiceEntity implements Serializable {
   Auditor lastModifiedBy;
 
   @LastModifiedDate
-  OffsetDateTime lastModifiedDate;
+  LocalDateTime lastModifiedDate;
 
 }
