@@ -7,23 +7,16 @@ import org.springframework.context.annotation.Lazy
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.transaction.annotation.Transactional
-import pico.erp.company.CompanyApplication
-import pico.erp.invoice.InvoiceApplication
-import pico.erp.item.ItemApplication
 import pico.erp.item.ItemId
 import pico.erp.item.spec.ItemSpecCode
 import pico.erp.outsourced.invoice.*
-import pico.erp.process.ProcessApplication
-import pico.erp.project.ProjectApplication
+import pico.erp.shared.ComponentDefinitionServiceLoaderTestComponentSiblingsSupplier
 import pico.erp.shared.TestParentApplication
 import pico.erp.shared.data.UnitKind
-import pico.erp.user.UserApplication
 import spock.lang.Specification
 
 @SpringBootTest(classes = [OutsourcedInvoiceApplication, TestConfig])
-@SpringBootTestComponent(parent = TestParentApplication, siblings = [
-  UserApplication, ItemApplication, ProjectApplication, ProcessApplication, CompanyApplication, InvoiceApplication
-])
+@SpringBootTestComponent(parent = TestParentApplication, siblingsSupplier = ComponentDefinitionServiceLoaderTestComponentSiblingsSupplier.class)
 @Transactional
 @Rollback
 @ActiveProfiles("test")
