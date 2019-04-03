@@ -1,8 +1,8 @@
 package pico.erp.outsourced.invoice.item;
 
+import kkojaeh.spring.boot.component.ComponentAutowired;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.event.EventListener;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
@@ -23,20 +23,16 @@ public class OutsourcedInvoiceItemEventListener {
   @Autowired
   private OutsourcedInvoiceItemService outsourcedInvoiceItemService;
 
-  @Lazy
-  @Autowired
+  @ComponentAutowired
   private InvoiceItemService invoiceItemService;
 
-  @Lazy
   @Autowired
   private OutsourcedInvoiceService outsourcedInvoiceService;
 
-  @Lazy
-  @Autowired
+  @ComponentAutowired
   private ItemLotService itemLotService;
 
-  @Lazy
-  @Autowired
+  @ComponentAutowired
   private ItemSpecService itemSpecService;
 
   @EventListener

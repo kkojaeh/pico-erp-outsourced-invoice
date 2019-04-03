@@ -1,9 +1,8 @@
 package pico.erp.outsourced.invoice
 
+import kkojaeh.spring.boot.component.SpringBootTestComponent
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.ComponentScan
-import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Lazy
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.ActiveProfiles
@@ -13,19 +12,19 @@ import pico.erp.invoice.InvoiceRequests
 import pico.erp.invoice.InvoiceService
 import pico.erp.outsourced.invoice.item.OutsourcedInvoiceItemService
 import pico.erp.project.ProjectId
-import pico.erp.shared.IntegrationConfiguration
+import pico.erp.shared.ComponentDefinitionServiceLoaderTestComponentSiblingsSupplier
+import pico.erp.shared.TestParentApplication
 import pico.erp.shared.data.Address
 import pico.erp.user.UserId
 import spock.lang.Specification
 
-import java.time.OffsetDateTime
+import java.time.LocalDateTime
 
-@SpringBootTest(classes = [IntegrationConfiguration])
+@SpringBootTest(classes = [OutsourcedInvoiceApplication, TestConfig])
+@SpringBootTestComponent(parent = TestParentApplication, siblingsSupplier = ComponentDefinitionServiceLoaderTestComponentSiblingsSupplier.class)
 @Transactional
 @Rollback
 @ActiveProfiles("test")
-@Configuration
-@ComponentScan("pico.erp.config")
 class OutsourcedInvoiceServiceSpec extends Specification {
 
   @Autowired
@@ -44,11 +43,11 @@ class OutsourcedInvoiceServiceSpec extends Specification {
 
   def unknownId = OutsourcedInvoiceId.from("unknown")
 
-  def dueDate = OffsetDateTime.now().plusDays(7)
+  def dueDate = LocalDateTime.now().plusDays(7)
 
   def remark = "요청 비고"
 
-  def dueDate2 = OffsetDateTime.now().plusDays(8)
+  def dueDate2 = LocalDateTime.now().plusDays(8)
 
   def remark2 = "요청 비고2"
 
