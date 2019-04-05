@@ -1,6 +1,6 @@
 package pico.erp.outsourced.invoice;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,7 +26,7 @@ public class OutsourcedInvoiceData {
 
   Address receiveAddress;
 
-  LocalDateTime dueDate;
+  OffsetDateTime dueDate;
 
   OutsourcedInvoiceStatusKind status;
 
